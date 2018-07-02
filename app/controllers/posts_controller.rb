@@ -10,9 +10,16 @@ class PostsController < ApplicationController
   def update
     @post = Post.find(params[:id])
 
-    @post.update(post_params)
+    if @post.update(post_params)
+      redirect_to post_path(@post)
+    else
+      render :edit
+    end
+  end
 
-    redirect_to post_path(@post)
+  def create
+    byebug
+    @post = Post.new(post_params)
   end
 
   private

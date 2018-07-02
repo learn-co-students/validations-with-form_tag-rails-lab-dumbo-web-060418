@@ -1,0 +1,10 @@
+<%= form_tag('/posts') do  %>
+<%= label_tag "Post Title:" %>
+<%= text_field_tag "post[title]"  %>
+<%= text_field_tag "post[content]" %>
+<%= text_field_tag "post[category]" %>
+<%= submit_tag "Submit Post" %>
+
+
+
+<% end %>
